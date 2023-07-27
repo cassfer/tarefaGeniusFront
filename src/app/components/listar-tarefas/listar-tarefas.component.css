@@ -1,0 +1,20 @@
+.listaTarefas{
+  display: flex;
+  flex-direction: row;
+}
+
+.listas{
+  border: 1px solid #000f;
+  min-width: 15em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: move;
+}
+
+.tarefaList{
+  border: solid 1px #ccc;
+  min-width: 15em;
+  height: 60em;
+}

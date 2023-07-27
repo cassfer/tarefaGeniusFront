@@ -1,0 +1,44 @@
+<div class="listaTarefas">
+  <div class="listas lista-pendentes">
+    <h2>Pendentes</h2>
+    <div cdkDropList
+    #pendenteList = "cdkDropList"
+    [cdkDropListData]="tarefasPendentes"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListConnectedTo]="[andamentoList, feitasList]"
+    class="tarefaList">
+      <div class="box" *ngFor="let tarefa of tarefasPendentes" cdkDrag>
+        <app-tarefa-card [titulo]="tarefa.titulo" [descricao]="tarefa.descricao"/>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="listas lista-andamento">
+    <h2>Em andamento</h2>
+    <div cdkDropList
+    #andamentoList = "cdkDropList"
+    [cdkDropListData]="tarefasEmAndamento"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListConnectedTo]="[pendenteList, feitasList]"
+    class="tarefaList">
+      <div class="box" *ngFor="let tarefa of tarefasEmAndamento" cdkDrag>
+        <app-tarefa-card [titulo]="tarefa.titulo" [descricao]="tarefa.descricao"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="listas lista-pendentes">
+    <h2>Pendentes</h2>
+    <div cdkDropList
+    #feitasList = "cdkDropList"
+    [cdkDropListData]="tarefasFeitas"
+    (cdkDropListDropped)="drop($event)"
+    [cdkDropListConnectedTo]="[pendenteList, andamentoList]"
+    class="tarefaList">
+      <div class="box" *ngFor="let tarefa of tarefasFeitas" cdkDrag>
+        <app-tarefa-card [titulo]="tarefa.titulo" [descricao]="tarefa.descricao"/>
+      </div>
+    </div>
+  </div>
+</div>
