@@ -13,6 +13,7 @@ import { NgFor } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TarefaCardComponent } from './components/tarefa-card/tarefa-card.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     MatCardModule,
     CdkDropList,
     NgFor,
-    CdkDrag
+    CdkDrag,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
